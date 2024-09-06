@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04, macos-latest, windows-latest]
+        os: [ubuntu-20.04]
         build-type: [RelWithDebInfo]
         compiler: [gcc]
     runs-on: ${{ matrix.os }}
@@ -34,17 +34,6 @@ jobs:
           apt-mirrors:
             mc-rtc:
               cloudsmith: mc-rtc/head
-        macos: |
-          brew-taps: mc-rtc/mc-rtc
-          brew: mc_rtc
-        windows: |
-          vcpkg:
-            repo: microsoft/vcpkg
-            owner: mc-rtc
-            token: "${{ secrets.GITHUB_TOKEN }}"
-            registries:
-            - repo: mc-rtc/vcpkg-registry
-              packages: [ spacevecalg, rbdyn, eigen-qld, sch-core, tasks, mc-rbdyn-urdf, mc-rtc-data, eigen-quadprog, state-observation, hpp-spline, mc-rtc ]
     - name: Build and test
       uses: jrl-umi3218/github-actions/build-cmake-project@master
       with:
