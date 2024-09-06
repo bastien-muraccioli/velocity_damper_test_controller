@@ -1,4 +1,4 @@
-name: CI of NewController
+name: CI of VelocityDamperTestController
 
 on:
   push:

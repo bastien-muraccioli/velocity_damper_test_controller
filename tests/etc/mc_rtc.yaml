@@ -1,7 +1,7 @@
 # This configuration is used to run a few iterations of the controller
 MainRobot: JVRC1
-Enabled: NewController
+Enabled: VelocityDamperTestController
 
 IncludeHalfSitController: false
 ClearControllerModulePath: true
-ControllerModulePaths: ["$<TARGET_FILE_DIR:NewController>"]
+ControllerModulePaths: ["$<TARGET_FILE_DIR:VelocityDamperTestController>"]
